@@ -1,0 +1,56 @@
+[gd_scene load_steps=10 format=3 uid="uid://b6hsolth0tb8u"]
+
+[ext_resource type="PackedScene" uid="uid://cicgnvvrxdt6s" path="res://Player/player.tscn" id="1_3k0ak"]
+[ext_resource type="Script" path="res://test_world.gd" id="1_7q1fx"]
+[ext_resource type="PackedScene" uid="uid://drtjbfxcekj5k" path="res://TextureTileMap/trees/bush_1.tscn" id="2_2ydwc"]
+[ext_resource type="PackedScene" uid="uid://1lfui30miiq8" path="res://TextureTileMap/trees/bush_2.tscn" id="3_2x7nu"]
+[ext_resource type="PackedScene" uid="uid://ccbtk4k0bklra" path="res://TextureTileMap/trees/tree.tscn" id="4_lnoim"]
+[ext_resource type="PackedScene" uid="uid://kp1fef6qdsxs" path="res://Enemy/enemy.tscn" id="5_1iw3f"]
+[ext_resource type="PackedScene" uid="uid://dbpefmmiy11d0" path="res://artifacts_scenes/bunny_hoppers.tscn" id="7_umf6l"]
+[ext_resource type="PackedScene" uid="uid://ssx1jrs8ytqe" path="res://artifacts_scenes/fire_gauntlet.tscn" id="8_l3l1x"]
+[ext_resource type="PackedScene" uid="uid://darpysf10vyp7" path="res://artifacts_scenes/crystal_heart.tscn" id="9_bedg8"]
+
+[node name="Node2D" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_7q1fx")
+
+[node name="Player" parent="." instance=ExtResource("1_3k0ak")]
+position = Vector2(198, 137)
+
+[node name="Bush1" parent="." instance=ExtResource("2_2ydwc")]
+position = Vector2(82, 74)
+
+[node name="Bush" parent="." instance=ExtResource("3_2x7nu")]
+position = Vector2(222, 80)
+collision_mask = 14
+
+[node name="Tree" parent="." instance=ExtResource("4_lnoim")]
+position = Vector2(117, 65)
+collision_mask = 14
+
+[node name="enemy" parent="." instance=ExtResource("5_1iw3f")]
+position = Vector2(393, 86)
+
+[node name="enemy2" parent="." instance=ExtResource("5_1iw3f")]
+position = Vector2(448, 166)
+
+[node name="enemy3" parent="." instance=ExtResource("5_1iw3f")]
+position = Vector2(371, 298)
+
+[node name="enemy4" parent="." instance=ExtResource("5_1iw3f")]
+position = Vector2(553, 319)
+
+[node name="enemy5" parent="." instance=ExtResource("5_1iw3f")]
+position = Vector2(200, 318)
+
+[node name="ArtifactContainer" type="Node2D" parent="."]
+position = Vector2(102, 169)
+
+[node name="Artifacts" type="Node2D" parent="."]
+position = Vector2(-63, 90)
+
+[node name="bunny_hoppers" parent="Artifacts" instance=ExtResource("7_umf6l")]
+
+[node name="fire_gauntlet" parent="Artifacts" instance=ExtResource("8_l3l1x")]
+
+[node name="crystal_heart" parent="Artifacts" instance=ExtResource("9_bedg8")]

@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://drtjbfxcekj5k"]
+
+[ext_resource type="Texture2D" uid="uid://swe8iflnqx24" path="res://TextureTileMap/shadow trees/shadow4.png" id="1_guojn"]
+[ext_resource type="Texture2D" uid="uid://hmk7vf5wcoot" path="res://TextureTileMap/trees/bush1.png" id="1_y6x6l"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qv7hj"]
+radius = 5.0
+height = 17.0
+
+[node name="Bush1" type="StaticBody2D"]
+collision_mask = 14
+
+[node name="Shadow4" type="Sprite2D" parent="."]
+position = Vector2(2, 0)
+texture = ExtResource("1_guojn")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0.5, -3)
+texture = ExtResource("1_y6x6l")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 0)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_qv7hj")
