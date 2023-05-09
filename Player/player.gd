@@ -44,6 +44,7 @@ func player_movement(_delta):
 
 # Функция стрельбы
 func player_shoot():
+	velocity = Vector2.ZERO
 	if Input.is_action_pressed("shoot_top") and can_fire: 
 		var bullet_instance = bullet.instantiate()
 		bullet_instance.position = get_global_position()
@@ -78,6 +79,7 @@ func player_shoot():
 		can_fire = true
 
 
+# Метод игрока
 func player():
 	pass
 
@@ -93,7 +95,7 @@ func _on_player_hitbox_body_exited(body):
 	if body.has_method("enemy"):
 		enemy_inattack_range = false
 
-
+# Обработка получения урона персонажем 
 func enemy_attack():
 	if enemy_inattack_range and enemy_attack_cooldown:
 		Global.Health_Player = Global.Health_Player - Global.Damage_Enemy

@@ -7,12 +7,12 @@ radius = 5.0
 height = 14.0
 
 [node name="Tree" type="StaticBody2D"]
+visibility_layer = 16
 collision_mask = 6
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, -37)
+position = Vector2(0, -53)
 texture = ExtResource("1_oq38i")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 16)
 shape = SubResource("CapsuleShape2D_i4u1y")

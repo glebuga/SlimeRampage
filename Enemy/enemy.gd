@@ -49,6 +49,7 @@ func deal_with_damage():
 	if bullet_inattack_one:
 		HEALTH = HEALTH - Global.Damage_Player
 
+
 func _on_enemy_hitbox_body_entered(body):
 	if body.has_method("bullet_player"):
 		bullet_inattack_one = true

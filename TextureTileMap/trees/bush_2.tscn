@@ -11,14 +11,14 @@ height = 21.0
 collision_mask = 6
 
 [node name="Shadow5" type="Sprite2D" parent="."]
-position = Vector2(1, 0)
+position = Vector2(1, -3)
 texture = ExtResource("2_rphnm")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0.5, -3)
+position = Vector2(0.5, -6)
 texture = ExtResource("1_acilk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, -1)
+position = Vector2(-0.5, -4)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_7vdhv")
