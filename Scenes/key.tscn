@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://dk64fky75fn58"]
+
+[ext_resource type="Texture2D" uid="uid://dwweb5i5kwkq" path="res://Sprites/HUD/key-white.png" id="1_bvyt0"]
+[ext_resource type="Script" path="res://Scripts/key.gd" id="1_j8aot"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bjih3"]
+radius = 8.06226
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ul0i3"]
+radius = 3.0
+height = 12.434
+
+[node name="key" type="StaticBody2D"]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_j8aot")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-0.5, 0.5)
+scale = Vector2(0.46875, 0.46875)
+texture = ExtResource("1_bvyt0")
+hframes = 12
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(0, -1)
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 2)
+shape = SubResource("CircleShape2D_bjih3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.231, 1)
+shape = SubResource("CapsuleShape2D_ul0i3")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

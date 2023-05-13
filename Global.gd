@@ -6,6 +6,7 @@ var Health_Player = 4 # Здоровье персонажа
 var Fire_Rate_Player = 1 # Скорострельность персонажа
 var Speed_Player = 100 # Скорость персонажа
 var Damage_Player = 1 #Урон персонажа
+var Key_Player = 1 #кол-во ключей персонажа
 
 var inventory = []
 

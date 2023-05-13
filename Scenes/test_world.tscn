@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://b6hsolth0tb8u"]
+[gd_scene load_steps=9 format=3 uid="uid://b6hsolth0tb8u"]
 
 [ext_resource type="PackedScene" uid="uid://cicgnvvrxdt6s" path="res://Scenes/player.tscn" id="1_3k0ak"]
 [ext_resource type="Script" path="res://Scripts/test_world.gd" id="1_258va"]
 [ext_resource type="PackedScene" uid="uid://drtjbfxcekj5k" path="res://Scenes/bush_1.tscn" id="2_2ydwc"]
 [ext_resource type="PackedScene" uid="uid://kp1fef6qdsxs" path="res://Scenes/enemy.tscn" id="5_1iw3f"]
 [ext_resource type="PackedScene" uid="uid://dbpefmmiy11d0" path="res://Scenes/artifacts_scenes/bunny_hoppers.tscn" id="7_umf6l"]
+[ext_resource type="PackedScene" uid="uid://dk64fky75fn58" path="res://Scenes/key.tscn" id="8_5qlkd"]
 [ext_resource type="PackedScene" uid="uid://ssx1jrs8ytqe" path="res://Scenes/artifacts_scenes/fire_gauntlet.tscn" id="8_l3l1x"]
 [ext_resource type="PackedScene" uid="uid://darpysf10vyp7" path="res://Scenes/artifacts_scenes/crystal_heart.tscn" id="9_bedg8"]
 
@@ -32,3 +33,6 @@ position = Vector2(571, 157)
 
 [node name="Bush1" parent="." instance=ExtResource("2_2ydwc")]
 position = Vector2(350, 48)
+
+[node name="key" parent="." instance=ExtResource("8_5qlkd")]
+position = Vector2(280, 72)

@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://dn66abfl536fk"]
+
+[ext_resource type="Texture2D" uid="uid://b8pr8h25p3w4g" path="res://Sprites/TextureTileMap/objects/chest2.png" id="1_37npd"]
+[ext_resource type="Texture2D" uid="uid://duvdrnp7bt2pg" path="res://Sprites/TextureTileMap/objects/chest1.png" id="2_8usi3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wa8ve"]
+radius = 32.0156
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h6231"]
+size = Vector2(32, 14)
+
+[node name="chest" type="StaticBody2D"]
+collision_mask = 14
+
+[node name="chest zone" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="chest zone"]
+position = Vector2(0, -10)
+shape = SubResource("CircleShape2D_wa8ve")
+
+[node name="opened" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("1_37npd")
+
+[node name="closed" type="Sprite2D" parent="."]
+position = Vector2(0, -22)
+texture = ExtResource("2_8usi3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -5)
+shape = SubResource("RectangleShape2D_h6231")
