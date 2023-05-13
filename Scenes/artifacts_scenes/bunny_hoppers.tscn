@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://dbpefmmiy11d0"]
+
+[ext_resource type="Script" path="res://Scripts/Artifacts/bunny_hoppers.gd" id="1_2kbg4"]
+[ext_resource type="Texture2D" uid="uid://bg45rlulyyupc" path="res://Sprites/Artifacts/bunny_hoppers.png" id="2_uioen"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_r20ab"]
+
+[node name="bunny_hoppers" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_2kbg4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_uioen")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_r20ab")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
