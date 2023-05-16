@@ -1,4 +1,4 @@
-extends StaticBody2D
+extends Node2D
 
 # Обработка сигнала, когда что-то поподает в коллизию ключа
 func _on_area_2d_body_entered(body):

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b6hsolth0tb8u"]
+[gd_scene load_steps=11 format=3 uid="uid://b6hsolth0tb8u"]
 
 [ext_resource type="PackedScene" uid="uid://cicgnvvrxdt6s" path="res://Scenes/player.tscn" id="1_3k0ak"]
 [ext_resource type="Script" path="res://Scripts/test_world.gd" id="1_258va"]
@@ -7,7 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://dbpefmmiy11d0" path="res://Scenes/artifacts_scenes/bunny_hoppers.tscn" id="7_umf6l"]
 [ext_resource type="PackedScene" uid="uid://dk64fky75fn58" path="res://Scenes/key.tscn" id="8_5qlkd"]
 [ext_resource type="PackedScene" uid="uid://ssx1jrs8ytqe" path="res://Scenes/artifacts_scenes/fire_gauntlet.tscn" id="8_l3l1x"]
+[ext_resource type="PackedScene" uid="uid://be083nykk5xal" path="res://Scenes/hearts_container.tscn" id="9_7ow7h"]
 [ext_resource type="PackedScene" uid="uid://darpysf10vyp7" path="res://Scenes/artifacts_scenes/crystal_heart.tscn" id="9_bedg8"]
+[ext_resource type="PackedScene" uid="uid://dn66abfl536fk" path="res://Scenes/chest.tscn" id="10_6ys7y"]
 
 [node name="Node2D" type="Node2D"]
 y_sort_enabled = true
@@ -36,3 +38,17 @@ position = Vector2(350, 48)
 
 [node name="key" parent="." instance=ExtResource("8_5qlkd")]
 position = Vector2(280, 72)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="heartsContainer" parent="CanvasLayer" instance=ExtResource("9_7ow7h")]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 60.0
+offset_bottom = 48.0
+
+[node name="chest" parent="." instance=ExtResource("10_6ys7y")]
+position = Vector2(232, 240)
+
+[node name="chest2" parent="." instance=ExtResource("10_6ys7y")]
+position = Vector2(384, 312)

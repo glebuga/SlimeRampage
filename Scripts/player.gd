@@ -11,6 +11,12 @@ var can_fire = true
 var enemy_inattack_range = false # Переменная, входит ли враг в область хитбокса 
 var enemy_attack_cooldown = true
 
+signal refresh_health
+
+
+func _ready():
+	pass
+
 
 func _process(_delta):
 	player_shoot() # Вызов функции стрельбы персонажа
@@ -20,9 +26,9 @@ func _physics_process(delta):
 	player_movement(delta) # Вызов функции передвижения персонажа
 	enemy_attack() # Вызов функции атаки по персонажу
 	
-	if Global.Health_Player <= 0:
+	if Global.Сurrent_Health_Player <= 0:
 		player_alive = false # здесь может быть конечный экран при смерти мерсонажа
-		Global.Health_Player = 0
+		Global.Сurrent_Health_Player = 0
 		print("player has been killed")
 		self.queue_free()
 		
@@ -98,7 +104,8 @@ func _on_player_hitbox_body_exited(body):
 # Обработка получения урона персонажем 
 func enemy_attack():
 	if enemy_inattack_range and enemy_attack_cooldown:
-		Global.Health_Player = Global.Health_Player - Global.Damage_Enemy
+		Global.Сurrent_Health_Player = Global.Сurrent_Health_Player - Global.Damage_Enemy
+		refresh_health.emit()
 		enemy_attack_cooldown = false
 		$time_of_taking_damage.start()
 		print("player took 1 gamage")
