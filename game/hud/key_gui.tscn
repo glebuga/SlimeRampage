@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://j8myp7jra7hq"]
+
+[ext_resource type="Script" path="res://Scripts/key_gui.gd" id="1_6ibgi"]
+[ext_resource type="Texture2D" uid="uid://dwweb5i5kwkq" path="res://game/hud/sprites/key-white.png" id="1_ahvgc"]
+
+[node name="key_gui" type="Panel"]
+self_modulate = Color(1, 1, 1, 0)
+offset_right = 36.0
+offset_bottom = 16.0
+script = ExtResource("1_6ibgi")
+
+[node name="key" type="Sprite2D" parent="."]
+scale = Vector2(0.46875, 0.46875)
+texture = ExtResource("1_ahvgc")
+centered = false
+hframes = 12
+
+[node name="X" type="Label" parent="."]
+layout_mode = 0
+offset_left = 11.0
+offset_top = -5.0
+offset_right = 20.0
+offset_bottom = 21.0
+text = "x"
+
+[node name="quantity" type="Label" parent="."]
+layout_mode = 0
+offset_left = 20.0
+offset_top = -4.0
+offset_right = 30.0
+offset_bottom = 22.0
+text = "0"

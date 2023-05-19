@@ -1,0 +1,47 @@
+[gd_scene load_steps=6 format=3 uid="uid://3qryijxsl5u2"]
+
+[ext_resource type="Script" path="res://game/enemies/enemy.gd" id="1_7hjjn"]
+[ext_resource type="Texture2D" uid="uid://vvcl47mfmdeq" path="res://game/enemies/sprites/Enemy.png" id="1_d0uwt"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_15rh8"]
+radius = 109.041
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_241ih"]
+size = Vector2(30, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g45f3"]
+size = Vector2(32, 32)
+
+[node name="enemy" type="CharacterBody2D" groups=["enemy"]]
+collision_layer = 4
+collision_mask = 15
+script = ExtResource("1_7hjjn")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -12)
+texture = ExtResource("1_d0uwt")
+
+[node name="detection_area" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="detection_area"]
+position = Vector2(0, -12)
+shape = SubResource("CircleShape2D_15rh8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -12)
+shape = SubResource("RectangleShape2D_241ih")
+
+[node name="enemy_hitbox" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 10
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemy_hitbox"]
+position = Vector2(0, -12)
+shape = SubResource("RectangleShape2D_g45f3")
+
+[connection signal="body_entered" from="detection_area" to="." method="_on_detection_area_body_entered"]
+[connection signal="body_exited" from="detection_area" to="." method="_on_detection_area_body_exited"]
+[connection signal="body_entered" from="enemy_hitbox" to="." method="_on_enemy_hitbox_body_entered"]
+[connection signal="body_exited" from="enemy_hitbox" to="." method="_on_enemy_hitbox_body_exited"]
