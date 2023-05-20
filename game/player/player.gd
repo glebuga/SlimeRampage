@@ -28,7 +28,6 @@ func _physics_process(delta):
 	
 	if Global.Сurrent_Health_Player <= 0:
 		player_alive = false # здесь может быть конечный экран при смерти мерсонажа
-		Global.Сurrent_Health_Player = 0
 		print("player has been killed")
 		self.queue_free()
 	
