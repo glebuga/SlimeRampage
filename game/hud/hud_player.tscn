@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://qu1ff3vthh3w"]
+
+[ext_resource type="PackedScene" uid="uid://du052ilek42qp" path="res://game/hud/hearts_container.tscn" id="1_7ypuk"]
+[ext_resource type="PackedScene" uid="uid://j8myp7jra7hq" path="res://game/hud/key_gui.tscn" id="2_2e524"]
+
+[node name="hud_player" type="CanvasLayer"]
+
+[node name="heartsContainer" parent="." instance=ExtResource("1_7ypuk")]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 48.0
+offset_bottom = 48.0
+
+[node name="key_gui" parent="." instance=ExtResource("2_2e524")]
+offset_left = 8.0
+offset_top = 32.0
+offset_right = 44.0
+offset_bottom = 48.0

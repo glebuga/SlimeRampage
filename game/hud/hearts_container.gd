@@ -6,8 +6,6 @@ var heart = preload("res://game/hud/heart_gui.tscn") # Загружаем сце
 func _ready():
 	for i in range(Global.Max_Health_Player):
 		add_child(heart.instantiate())
-	# Подписка на сигнал refresh_health
-	$"../../Player".refresh_health.connect(_on_player_refresh_health)
 	
 	
 func refresh_health():
