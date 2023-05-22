@@ -12,7 +12,7 @@ func _ready():
 	$closed.visible = true
 
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	open_the_chest() # Вызов функции открытия сундука
 
 
@@ -26,6 +26,18 @@ func open_the_chest():
 			# Меняем отображение сундука
 			$opened.visible = true
 			$closed.visible = false
+			
+			var artifacts = [
+				load("res://game/artifacts/bunny_hoppers.tscn"),
+				load("res://game/artifacts/crystal_heart.tscn"),
+				load("res://game/artifacts/fire_gauntlet.tscn")
+			]
+
+			var random_artifact_scene = artifacts[randi_range(0, artifacts.size() - 1)]
+			var artifact_instance = random_artifact_scene.instance()
+			artifact_instance.position = position
+			get_tree().get_root().add_child(artifact_instance)
+
 			
 			
 func _on_chest_zone_body_entered(body):
