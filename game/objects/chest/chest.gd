@@ -3,10 +3,16 @@ extends StaticBody2D
 var player_nearby = false # Переменная, находится ли персонаж в зоне открытия сундука
 var its_open = false # Переменная, для того чтобы понять, закрыт ли сундук
 
+@onready var artifact1 = $Artifacts/bunny_hoppers
+@onready var artifact2 = $Artifacts/fire_gauntlet
+@onready var artifact3 = $Artifacts/crystal_heart
+
+
 signal refresh_key
 
 
 func _ready():
+	
 	# Начальное отображение сундука
 	$opened.visible = false
 	$closed.visible = true
@@ -27,16 +33,11 @@ func open_the_chest():
 			$opened.visible = true
 			$closed.visible = false
 			
-			var artifacts = [
-				load("res://game/artifacts/bunny_hoppers.tscn"),
-				load("res://game/artifacts/crystal_heart.tscn"),
-				load("res://game/artifacts/fire_gauntlet.tscn")
-			]
-
-			var random_artifact_scene = artifacts[randi_range(0, artifacts.size() - 1)]
-			var artifact_instance = random_artifact_scene.instance()
-			artifact_instance.position = position
-			get_tree().get_root().add_child(artifact_instance)
+			var artifacts = [artifact1, artifact2, artifact3]
+			var artifact_scene = artifacts[randi_range(0, artifacts.size() - 1)]
+			var artifact_instance = artifact_scene.duplicate()
+			artifact_instance.position = position + Vector2(0, -16)
+			get_parent().add_child(artifact_instance)
 
 			
 			
