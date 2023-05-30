@@ -32,10 +32,7 @@ func open_the_chest():
 			if Global.available_artifacts.size() > 0:
 				var artifact_index = randi() % Global.available_artifacts.size()
 				var artifact_scene = Global.available_artifacts[artifact_index]
-				# Заменить выбранный артефакт последним элементом массива available_artifacts:
-				Global.available_artifacts[artifact_index] = Global.available_artifacts[Global.available_artifacts.size() - 1]
-				# Удалить последний элемент массива с помощью метода pop_back:
-				Global.available_artifacts.pop_back()
+				Global.available_artifacts.erase(artifact_scene)
 				
 				var artifact_instance = artifact_scene.instantiate()
 				artifact_instance.position = position + Vector2(0, -16)
