@@ -5,7 +5,7 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_r20ab"]
 
-[node name="bunny_hoppers" type="Area2D"]
+[node name="bunny_hoppers" type="Area2D" groups=["artifacts"]]
 collision_mask = 2
 script = ExtResource("1_fgpc8")
 

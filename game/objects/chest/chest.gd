@@ -3,10 +3,6 @@ extends StaticBody2D
 var player_nearby = false # Переменная, находится ли персонаж в зоне открытия сундука
 var its_open = false # Переменная, для того чтобы понять, закрыт ли сундук
 
-@onready var artifact1 = $Artifacts/bunny_hoppers
-@onready var artifact2 = $Artifacts/fire_gauntlet
-@onready var artifact3 = $Artifacts/crystal_heart
-
 
 signal refresh_key
 
@@ -33,12 +29,17 @@ func open_the_chest():
 			$opened.visible = true
 			$closed.visible = false
 			
-			var artifacts = [artifact1, artifact2, artifact3]
-			var artifact_scene = artifacts[randi_range(0, artifacts.size() - 1)]
-			var artifact_instance = artifact_scene.duplicate()
-			artifact_instance.position = position + Vector2(0, -16)
-			get_parent().add_child(artifact_instance)
-
+			if Global.available_artifacts.size() > 0:
+				var artifact_index = randi() % Global.available_artifacts.size()
+				var artifact_scene = Global.available_artifacts[artifact_index]
+				# Заменить выбранный артефакт последним элементом массива available_artifacts:
+				Global.available_artifacts[artifact_index] = Global.available_artifacts[Global.available_artifacts.size() - 1]
+				# Удалить последний элемент массива с помощью метода pop_back:
+				Global.available_artifacts.pop_back()
+				
+				var artifact_instance = artifact_scene.instantiate()
+				artifact_instance.position = position + Vector2(0, -16)
+				get_parent().add_child(artifact_instance)
 			
 			
 func _on_chest_zone_body_entered(body):

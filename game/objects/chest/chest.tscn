@@ -1,11 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://dn66abfl536fk"]
+[gd_scene load_steps=6 format=3 uid="uid://dn66abfl536fk"]
 
 [ext_resource type="Texture2D" uid="uid://b8pr8h25p3w4g" path="res://game/levels/sprites/TextureTileMap/objects/chest2.png" id="1_37npd"]
 [ext_resource type="Script" path="res://game/objects/chest/chest.gd" id="1_o8e3b"]
 [ext_resource type="Texture2D" uid="uid://duvdrnp7bt2pg" path="res://game/levels/sprites/TextureTileMap/objects/chest1.png" id="2_8usi3"]
-[ext_resource type="PackedScene" uid="uid://dbpefmmiy11d0" path="res://game/artifacts/bunny_hoppers.tscn" id="4_rlim3"]
-[ext_resource type="PackedScene" uid="uid://darpysf10vyp7" path="res://game/artifacts/crystal_heart.tscn" id="5_mb4by"]
-[ext_resource type="PackedScene" uid="uid://ssx1jrs8ytqe" path="res://game/artifacts/fire_gauntlet.tscn" id="6_bxej8"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wa8ve"]
 radius = 32.0156
@@ -13,7 +10,7 @@ radius = 32.0156
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h6231"]
 size = Vector2(32, 17)
 
-[node name="chest" type="StaticBody2D" groups=["chest"]]
+[node name="chest" type="StaticBody2D" groups=["chests"]]
 collision_mask = 14
 script = ExtResource("1_o8e3b")
 
@@ -35,15 +32,6 @@ texture = ExtResource("2_8usi3")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -10.5)
 shape = SubResource("RectangleShape2D_h6231")
-
-[node name="Artifacts" type="Node2D" parent="."]
-position = Vector2(-82027, 33539)
-
-[node name="crystal_heart" parent="Artifacts" instance=ExtResource("5_mb4by")]
-
-[node name="bunny_hoppers" parent="Artifacts" instance=ExtResource("4_rlim3")]
-
-[node name="fire_gauntlet" parent="Artifacts" instance=ExtResource("6_bxej8")]
 
 [connection signal="body_entered" from="chest zone" to="." method="_on_chest_zone_body_entered"]
 [connection signal="body_exited" from="chest zone" to="." method="_on_chest_zone_body_exited"]

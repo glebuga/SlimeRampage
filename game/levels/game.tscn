@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://lat3q6460w5w"]
+[gd_scene load_steps=8 format=3 uid="uid://lat3q6460w5w"]
 
 [ext_resource type="PackedScene" uid="uid://c0i4hhf6vqlf2" path="res://game/levels/level1.tscn" id="1_shtpv"]
 [ext_resource type="Script" path="res://global/Global.gd" id="1_u4yo3"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dwnfm2ahpplkf" path="res://game/player/player.tscn" id="3_ul0sr"]
 [ext_resource type="PackedScene" uid="uid://qu1ff3vthh3w" path="res://game/hud/hud_player.tscn" id="5_kgo20"]
 [ext_resource type="PackedScene" uid="uid://dn66abfl536fk" path="res://game/objects/chest/chest.tscn" id="6_a5vhs"]
+[ext_resource type="PackedScene" uid="uid://dk64fky75fn58" path="res://game/objects/key/key.tscn" id="7_ixx2o"]
 
 [node name="Game" type="Node"]
 process_mode = 3
@@ -31,3 +32,27 @@ position = Vector2(619, 267)
 
 [node name="chest3" parent="." instance=ExtResource("6_a5vhs")]
 position = Vector2(380, 291)
+
+[node name="chest4" parent="." instance=ExtResource("6_a5vhs")]
+position = Vector2(288, 288)
+
+[node name="key" parent="." instance=ExtResource("7_ixx2o")]
+position = Vector2(432, 136)
+
+[node name="key2" parent="." instance=ExtResource("7_ixx2o")]
+position = Vector2(488, 136)
+
+[node name="key3" parent="." instance=ExtResource("7_ixx2o")]
+position = Vector2(544, 136)
+
+[node name="chest5" parent="." instance=ExtResource("6_a5vhs")]
+position = Vector2(184, 216)
+
+[node name="chest6" parent="." instance=ExtResource("6_a5vhs")]
+position = Vector2(664, 176)
+
+[node name="chest7" parent="." instance=ExtResource("6_a5vhs")]
+position = Vector2(264, 136)
+
+[node name="chest8" parent="." instance=ExtResource("6_a5vhs")]
+position = Vector2(368, 88)

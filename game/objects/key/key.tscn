@@ -6,7 +6,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_bjih3"]
 radius = 8.06226
 
-[node name="key" type="Node2D" groups=["key"]]
+[node name="key" type="Node2D" groups=["keys"]]
 script = ExtResource("1_4lyvk")
 
 [node name="key" type="Sprite2D" parent="."]

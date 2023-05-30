@@ -1,9 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://c0i4hhf6vqlf2"]
+[gd_scene load_steps=6 format=3 uid="uid://c0i4hhf6vqlf2"]
 
 [ext_resource type="Texture2D" uid="uid://bu8jydxbw1dic" path="res://game/levels/sprites/dangeon/Tiles-SandstoneDungeons.png" id="1_xxfli"]
 [ext_resource type="Texture2D" uid="uid://dk52c7c7b8kbm" path="res://game/levels/sprites/dangeon/Tiles-Props-pack.png" id="2_107ap"]
-[ext_resource type="PackedScene" uid="uid://dn66abfl536fk" path="res://game/objects/chest/chest.tscn" id="3_wvtf0"]
-[ext_resource type="PackedScene" uid="uid://dk64fky75fn58" path="res://game/objects/key/key.tscn" id="4_4xnwb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1vxel"]
 texture = ExtResource("1_xxfli")
@@ -473,22 +471,12 @@ texture_region_size = Vector2i(32, 32)
 10:8/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 10:8/0/physics_layer_0/angular_velocity = 0.0
 
-[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_kqdsp"]
-resource_name = "chest"
-scenes/1/scene = ExtResource("3_wvtf0")
-
-[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_401gs"]
-resource_name = "key"
-scenes/1/scene = ExtResource("4_4xnwb")
-
 [sub_resource type="TileSet" id="TileSet_g66fo"]
 tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
 physics_layer_0/collision_mask = 14
 sources/0 = SubResource("TileSetAtlasSource_1vxel")
 sources/1 = SubResource("TileSetAtlasSource_sllus")
-sources/2 = SubResource("TileSetScenesCollectionSource_kqdsp")
-sources/3 = SubResource("TileSetScenesCollectionSource_401gs")
 
 [node name="Level1" type="Node2D"]
 process_mode = 1
