@@ -28,16 +28,19 @@ func open_the_chest():
 			# Меняем отображение сундука
 			$opened.visible = true
 			$closed.visible = false
-			
+
 			if Global.available_artifacts.size() > 0:
+				# Выбор рандомного артефакта из массива доступных
 				var artifact_index = randi() % Global.available_artifacts.size()
 				var artifact_scene = Global.available_artifacts[artifact_index]
+				# Удаление выбранного артефакта из массива доступных
 				Global.available_artifacts.erase(artifact_scene)
 				
+				# Отображение артефакта на сцене
 				var artifact_instance = artifact_scene.instantiate()
 				artifact_instance.position = position + Vector2(0, -16)
 				get_parent().add_child(artifact_instance)
-			
+
 			
 func _on_chest_zone_body_entered(body):
 	if body.has_method("player"):

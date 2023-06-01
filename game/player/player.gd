@@ -11,8 +11,6 @@ var can_fire = true
 var enemy_inattack_range = false # Переменная, входит ли враг в область хитбокса 
 var enemy_attack_cooldown = true
 
-signal refresh_health
-
 
 func _ready():
 	pass
@@ -104,7 +102,6 @@ func _on_player_hitbox_body_exited(body):
 func enemy_attack():
 	if enemy_inattack_range and enemy_attack_cooldown:
 		Global.Сurrent_Health_Player = Global.Сurrent_Health_Player - Global.Damage_Enemy
-		refresh_health.emit()
 		enemy_attack_cooldown = false
 		$time_of_taking_damage.start()
 		print("player took 1 gamage")

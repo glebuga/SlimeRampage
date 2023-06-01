@@ -1,7 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://c0i4hhf6vqlf2"]
+[gd_scene load_steps=9 format=3 uid="uid://c0i4hhf6vqlf2"]
 
 [ext_resource type="Texture2D" uid="uid://bu8jydxbw1dic" path="res://game/levels/sprites/dangeon/Tiles-SandstoneDungeons.png" id="1_xxfli"]
 [ext_resource type="Texture2D" uid="uid://dk52c7c7b8kbm" path="res://game/levels/sprites/dangeon/Tiles-Props-pack.png" id="2_107ap"]
+[ext_resource type="PackedScene" uid="uid://dn66abfl536fk" path="res://game/objects/chest/chest.tscn" id="3_wvtf0"]
+[ext_resource type="PackedScene" uid="uid://dk64fky75fn58" path="res://game/objects/key/key.tscn" id="4_4xnwb"]
+[ext_resource type="PackedScene" uid="uid://3qryijxsl5u2" path="res://game/enemies/enemy.tscn" id="5_8k4ec"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1vxel"]
 texture = ExtResource("1_xxfli")
@@ -509,3 +512,27 @@ layer_3/y_sort_enabled = false
 layer_3/y_sort_origin = 0
 layer_3/z_index = 2
 layer_3/tile_data = PackedInt32Array(3, 65537, 6, 20, 65537, 6, 393214, 327681, 6, 327705, 393217, 6, 1245209, 458753, 6, 1245208, 262145, 7, 1245210, 262145, 7, 327704, 327681, 7, 327706, 327681, 7, 393213, 393217, 7, 393215, 393217, 7, 1245235, 458753, 7, 1245237, 458753, 7, 1245236, 131073, 6, 917540, 589825, 8, 917545, 589825, 8, 196585, 589825, 5, 589805, 589825, 5, 262136, 589825, 5, 196593, 589825, 5, 589816, 589825, 5, 65537, 1, 8, 65538, 65537, 8, 131073, 131073, 8, 65558, 196609, 8, 65557, 262145, 8, 131094, 262145, 8, 1, 131073, 7, 2, 196609, 7, 21, 131073, 7, 22, 196609, 7, 131046, 1, 8, 196582, 131073, 8, 131047, 65537, 8, 65564, 1, 8, 131100, 131073, 8, 65565, 65537, 8, 983068, 1, 8, 1048604, 131073, 8, 983069, 65537, 8, 983041, 1, 8, 1048577, 131073, 8, 983042, 65537, 8, 983095, 1, 8, 1048631, 131073, 8, 983096, 65537, 8, 131075, 2, 65536, 131092, 2, 65536, 589827, 2, 65536, 196612, 3, 65536, 196627, 3, 65536, 524293, 3, 65536)
+
+[node name="key" parent="." instance=ExtResource("4_4xnwb")]
+position = Vector2(535, 71)
+
+[node name="key2" parent="." instance=ExtResource("4_4xnwb")]
+position = Vector2(567, 69)
+
+[node name="key3" parent="." instance=ExtResource("4_4xnwb")]
+position = Vector2(610, 72)
+
+[node name="chest" parent="." instance=ExtResource("3_wvtf0")]
+position = Vector2(456, 302)
+
+[node name="chest2" parent="." instance=ExtResource("3_wvtf0")]
+position = Vector2(594, 312)
+
+[node name="chest3" parent="." instance=ExtResource("3_wvtf0")]
+position = Vector2(325, 293)
+
+[node name="chest4" parent="." instance=ExtResource("3_wvtf0")]
+position = Vector2(172, 291)
+
+[node name="enemy" parent="." instance=ExtResource("5_8k4ec")]
+position = Vector2(77, 133)
