@@ -24,7 +24,6 @@ func open_the_chest():
 		if Input.is_action_just_pressed("activation"): # Если нажата клавиша "Е"
 			its_open = true
 			Global.Key_Player -= 1 # Отнимаем ключ у глобальной переменной
-			refresh_key.emit()
 			# Меняем отображение сундука
 			$opened.visible = true
 			$closed.visible = false

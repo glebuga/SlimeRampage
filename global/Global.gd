@@ -8,6 +8,7 @@ signal taking_away_health_gui # Сигнал для обновления здо�
 signal adding_health_gui # Сигнал для обновления здоровья персонажа, когда он подбирает сердце
 signal increasing_max_health_gui(diff) # Сигнал для увеличения максимального здоровья персонажа при подборе артефакта
 
+signal refresh_key_gui(diff) # Сигнал для обновления количества ключей в gui
 
 # Переменная для вызова сигнала паузы(get и set)
 var game_paused : bool = false:
@@ -48,7 +49,12 @@ var Сurrent_Health_Player: int = Max_Health_Player: # Текущее здоро
 var Fire_Rate_Player: float = Standart_Fire_Rate_Player # Скорострельность персонажа
 var Speed_Player: float = Standart_Speed_Player # Скорость персонажа
 var Damage_Player = Standart_Damage_Player # Урон персонажа
-var Key_Player: int = Standart_Key_Player # Кол-во ключей персонажа
+var Key_Player: int = Standart_Key_Player: # Кол-во ключей персонажа
+	get:
+		return Key_Player
+	set(value):
+		emit_signal("refresh_key_gui", value) # Вызов сигнала обновления значения ключа в gui
+		Key_Player = value
 
 
 var artifacts = [] # Массив артефактов

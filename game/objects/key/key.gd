@@ -12,7 +12,6 @@ func _on_area_2d_body_entered(body):
 	# проверка, является ли это игрок
 	if body.has_method("player"):
 		Global.Key_Player += 1 # Прибавляем кол-во ключей
-		refresh_key.emit()
 		queue_free() # Удаляем ключ со сцены
 
 	
