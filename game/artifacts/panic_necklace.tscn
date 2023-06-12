@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://i07nbwwduhk7"]
+
+[ext_resource type="Script" path="res://game/artifacts/panic_necklace.gd" id="1_4doec"]
+[ext_resource type="Texture2D" uid="uid://boqbu0dnm2s57" path="res://game/artifacts/sprites/panic_necklace.png" id="1_alnut"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_18psw"]
+
+[node name="panic_necklace" type="Area2D"]
+script = ExtResource("1_4doec")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_alnut")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_18psw")

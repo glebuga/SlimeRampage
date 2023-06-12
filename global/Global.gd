@@ -24,7 +24,7 @@ var Damage_Enemy = 1 #Урон врага
 # Стандартные характеристики персонажа(переменные для того чтобы задать стандартные характеристики персонажу, если игра перезапущена)
 var Standart_Health_Player: int = 3 # Здоровье персонажа
 var Standart_Fire_Rate_Player: float = 1.0 # Скорострельность персонажа
-var Standart_Speed_Player: float = 250.0 # Скорость персонажа
+var Standart_Speed_Player: float = 150.0 # Скорость персонажа
 var Standart_Damage_Player = 1 # Урон персонажа
 var Standart_Key_Player: int = 10 # Кол-во ключей персонажа
 

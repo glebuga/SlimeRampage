@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://1ateewjttcv1"]
+
+[ext_resource type="Texture2D" uid="uid://cc1o6g5ig0p8" path="res://game/artifacts/sprites/feral_claws.png" id="1_0hkgg"]
+[ext_resource type="Script" path="res://game/artifacts/lucky_scarf.gd" id="1_gt18b"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_18psw"]
+
+[node name="lucky_scarf" type="Area2D"]
+script = ExtResource("1_gt18b")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_0hkgg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_18psw")
