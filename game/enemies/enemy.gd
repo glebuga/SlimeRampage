@@ -31,7 +31,7 @@ func _physics_process(delta):
 		# Выпадение ключа
 		var key_instance = key.instantiate()
 		key_instance.position = get_global_position()
-		get_tree().get_root().add_child(key_instance)
+		get_parent().add_child(key_instance)
 		
 		print("enemy has been killed")
 		self.queue_free()

@@ -1,31 +1,40 @@
 [gd_scene load_steps=7 format=3 uid="uid://lat3q6460w5w"]
 
-[ext_resource type="PackedScene" uid="uid://c0i4hhf6vqlf2" path="res://game/levels/level1.tscn" id="1_shtpv"]
 [ext_resource type="Script" path="res://global/Global.gd" id="1_u4yo3"]
 [ext_resource type="PackedScene" uid="uid://cswpfgqwvfd5u" path="res://game/menu/pause/pause_menu.tscn" id="2_f2oyn"]
-[ext_resource type="PackedScene" uid="uid://dwnfm2ahpplkf" path="res://game/player/player.tscn" id="3_ul0sr"]
+[ext_resource type="PackedScene" uid="uid://m2hqjsp75ig" path="res://game/menu/main_menu.tscn" id="5_a44fs"]
 [ext_resource type="PackedScene" uid="uid://qu1ff3vthh3w" path="res://game/hud/hud_player.tscn" id="5_kgo20"]
-[ext_resource type="PackedScene" uid="uid://3qryijxsl5u2" path="res://game/enemies/enemy.tscn" id="6_2tsum"]
+[ext_resource type="Texture2D" uid="uid://c4cx5h5rirxnv" path="res://game/menu/BackgroundMenu.png" id="6_6e73y"]
+[ext_resource type="PackedScene" uid="uid://b3g6n6oo6kpen" path="res://game/menu/settings_menu.tscn" id="6_diynu"]
 
-[node name="Game" type="Node"]
+[node name="Main" type="Node"]
 process_mode = 3
 script = ExtResource("1_u4yo3")
 
-[node name="Level1" parent="." instance=ExtResource("1_shtpv")]
-position = Vector2(-56, 0)
-
-[node name="Player" parent="Level1" instance=ExtResource("3_ul0sr")]
-position = Vector2(383, 182)
+[node name="Game" type="Node" parent="."]
+process_mode = 1
 
 [node name="menu" type="CanvasLayer" parent="."]
 
 [node name="PauseMenu" parent="menu" instance=ExtResource("2_f2oyn")]
 visible = false
 
+[node name="MainMenu" parent="menu" instance=ExtResource("5_a44fs")]
+visible = true
+metadata/_edit_use_anchors_ = true
+
+[node name="SettingsMenu" parent="menu" instance=ExtResource("6_diynu")]
+visible = false
+
 [node name="hud_player" parent="." instance=ExtResource("5_kgo20")]
+visible = false
 
-[node name="enemy" parent="." instance=ExtResource("6_2tsum")]
-position = Vector2(200, 64)
-
-[node name="enemy2" parent="." instance=ExtResource("6_2tsum")]
-position = Vector2(416, 64)
+[node name="Background" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_6e73y")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true

@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://c0i4hhf6vqlf2"]
+[gd_scene load_steps=10 format=3 uid="uid://c0i4hhf6vqlf2"]
 
 [ext_resource type="Texture2D" uid="uid://bu8jydxbw1dic" path="res://game/levels/sprites/dangeon/Tiles-SandstoneDungeons.png" id="1_xxfli"]
 [ext_resource type="Texture2D" uid="uid://dk52c7c7b8kbm" path="res://game/levels/sprites/dangeon/Tiles-Props-pack.png" id="2_107ap"]
 [ext_resource type="PackedScene" uid="uid://dn66abfl536fk" path="res://game/objects/chest/chest.tscn" id="3_wvtf0"]
 [ext_resource type="PackedScene" uid="uid://dk64fky75fn58" path="res://game/objects/key/key.tscn" id="4_4xnwb"]
 [ext_resource type="PackedScene" uid="uid://3qryijxsl5u2" path="res://game/enemies/enemy.tscn" id="5_8k4ec"]
+[ext_resource type="PackedScene" uid="uid://dwnfm2ahpplkf" path="res://game/player/player.tscn" id="6_20jv1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1vxel"]
 texture = ExtResource("1_xxfli")
@@ -536,3 +537,12 @@ position = Vector2(172, 291)
 
 [node name="enemy" parent="." instance=ExtResource("5_8k4ec")]
 position = Vector2(77, 133)
+
+[node name="enemy2" parent="." instance=ExtResource("5_8k4ec")]
+position = Vector2(344, 85)
+
+[node name="enemy3" parent="." instance=ExtResource("5_8k4ec")]
+position = Vector2(503, 73)
+
+[node name="Player" parent="." instance=ExtResource("6_20jv1")]
+position = Vector2(356, 214)

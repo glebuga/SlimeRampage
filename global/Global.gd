@@ -1,6 +1,5 @@
 extends Node
 
-
 signal toggle_game_paused(is_paused : bool) # Сигнал для отображения паузы
 
 # Сигналы для обновления gui контейнера сердец
@@ -18,15 +17,17 @@ var game_paused : bool = false:
 		game_paused = value
 		get_tree().paused = game_paused
 		emit_signal("toggle_game_paused", game_paused)
+var in_game : bool = false
+
 
 var Damage_Enemy = 1 #Урон врага
 
 # Стандартные характеристики персонажа(переменные для того чтобы задать стандартные характеристики персонажу, если игра перезапущена)
-var Standart_Health_Player: int = 3 # Здоровье персонажа
-var Standart_Fire_Rate_Player: float = 1.0 # Скорострельность персонажа
-var Standart_Speed_Player: float = 150.0 # Скорость персонажа
-var Standart_Damage_Player = 1 # Урон персонажа
-var Standart_Key_Player: int = 10 # Кол-во ключей персонажа
+@export var Standart_Health_Player: int = 3 # Здоровье персонажа
+@export var Standart_Fire_Rate_Player: float = 1.0 # Скорострельность персонажа
+@export var Standart_Speed_Player: float = 150.0 # Скорость персонажа
+@export var Standart_Damage_Player = 1 # Урон персонажа
+@export var Standart_Key_Player: int = 3 # Кол-во ключей персонажа
 
 
 # Характеристики персонажа во время игры
@@ -61,7 +62,7 @@ var artifacts = [] # Массив артефактов
 var available_artifacts = [] # Массив доступных артефактов
 var from_artifact = false # Переменная предназначенная для проверки: прибавка к текущему здоровью осуществляется с помощью подбора артефакта или нет
 
-var inventory = [] # Массив для хранения действующих артефактах на герое
+var inventory = [] # Массив для хранения действующих артефактов на герое
 
 
 func _ready():
@@ -70,7 +71,8 @@ func _ready():
 
 func _input(event: InputEvent):
 	if(event.is_action_pressed("esc")):
-		game_paused = !game_paused
+		if (in_game):
+			game_paused = !game_paused
 
 
 # Добавление артефактов в массив
@@ -85,3 +87,15 @@ func adding_artifacts_to_an_array():
 				artifacts.append(artifact)
 			file_name = dir.get_next()
 	available_artifacts = artifacts.duplicate()
+
+
+# Сброс характеристик персонажа 
+func reset_characteristics():
+	Max_Health_Player = Standart_Health_Player
+	Сurrent_Health_Player = Max_Health_Player
+	Fire_Rate_Player = Standart_Fire_Rate_Player
+	Speed_Player = Standart_Speed_Player
+	Damage_Player = Standart_Damage_Player
+	Key_Player = Standart_Key_Player
+	inventory = []
+	adding_artifacts_to_an_array()
