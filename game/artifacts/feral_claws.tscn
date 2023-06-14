@@ -5,11 +5,16 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_18psw"]
 
-[node name="feral_claws" type="Area2D"]
+[node name="feral_claws" type="Area2D" groups=["artifacts"]]
+z_index = 1
+collision_mask = 2
 script = ExtResource("1_3r3er")
+fire_rate_bonus = -0.5
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_dq4cm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_18psw")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
