@@ -30,9 +30,9 @@ func _on_exit_button_pressed():
 
 func _on_restart_button_pressed():
 	Global.game_paused = false
-	
+	Global.is_restart_game = true
 	Global.reset_characteristics()
-	
+	Global.is_restart_game = false
 	for child in get_node("/root/Main/Game").get_children():
 		child.queue_free()
 	var level = load("res://game/levels/level1.tscn").instantiate()

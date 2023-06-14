@@ -16,4 +16,10 @@ shape = SubResource("CircleShape2D_18psw")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_fqvvs")
 
+<<<<<<< HEAD
+=======
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_18psw")
+
+>>>>>>> 9e473ef3803497dccde464981a32899ddfe8bb5c
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
