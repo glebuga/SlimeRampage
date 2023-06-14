@@ -27,7 +27,6 @@ metadata/_edit_use_anchors_ = true
 visible = false
 
 [node name="hud_player" parent="." instance=ExtResource("5_kgo20")]
-visible = false
 
 [node name="Background" type="TextureRect" parent="."]
 anchors_preset = 15

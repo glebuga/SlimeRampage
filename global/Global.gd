@@ -6,6 +6,7 @@ signal toggle_game_paused(is_paused : bool) # Сигнал для отображ
 signal taking_away_health_gui # Сигнал для обновления здоровья персонажа, когда он получает урон
 signal adding_health_gui # Сигнал для обновления здоровья персонажа, когда он подбирает сердце
 signal increasing_max_health_gui(diff) # Сигнал для увеличения максимального здоровья персонажа при подборе артефакта
+signal restart_health_gui()
 
 signal refresh_key_gui(diff) # Сигнал для обновления количества ключей в gui
 
@@ -18,7 +19,7 @@ var game_paused : bool = false:
 		get_tree().paused = game_paused
 		emit_signal("toggle_game_paused", game_paused)
 var in_game : bool = false
-
+var is_restart_game : bool = false
 
 var Damage_Enemy = 1 #Урон врага
 
@@ -42,9 +43,11 @@ var Сurrent_Health_Player: int = Max_Health_Player: # Текущее здоро
 	get:
 		return Сurrent_Health_Player
 	set(value):
-		if value > Сurrent_Health_Player and not from_artifact:
+		if is_restart_game:
+			emit_signal("restart_health_gui")
+		elif value > Сurrent_Health_Player and not from_artifact:
 			emit_signal("adding_health_gui")
-		elif value < Сurrent_Health_Player:
+		elif value < Сurrent_Health_Player: 
 			emit_signal("taking_away_health_gui")
 		Сurrent_Health_Player = value
 var Fire_Rate_Player: float = Standart_Fire_Rate_Player # Скорострельность персонажа

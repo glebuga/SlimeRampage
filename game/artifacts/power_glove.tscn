@@ -5,7 +5,9 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_18psw"]
 
-[node name="power_glove" type="Area2D"]
+[node name="power_glove" type="Area2D" groups=["artifacts"]]
+z_index = 1
+collision_mask = 2
 script = ExtResource("1_wtj7n")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

@@ -5,7 +5,9 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_18psw"]
 
-[node name="feral_claws" type="Area2D"]
+[node name="feral_claws" type="Area2D" groups=["artifacts"]]
+z_index = 1
+collision_mask = 2
 script = ExtResource("1_3r3er")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

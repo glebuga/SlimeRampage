@@ -9,7 +9,7 @@ func _ready():
 	Global.taking_away_health_gui.connect(taking_away_health)
 	Global.adding_health_gui.connect(adding_health)
 	Global.increasing_max_health_gui.connect(increasing_max_health)
-	
+	Global.restart_health_gui.connect(restart_health)
 	
 func taking_away_health():
 	# Найти последнее заполненное сердце
@@ -21,6 +21,12 @@ func taking_away_health():
 			sprite.frame = 4
 			break
 
+
+func restart_health():
+	for child in get_children():
+		child.queue_free()
+	for i in range(Global.Max_Health_Player):
+		add_child(heart.instantiate())
 
 func adding_health():
 	# Найти первое пустое сердце
